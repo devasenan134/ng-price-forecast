@@ -1,0 +1,51 @@
+{% extends 'dashboard/base.html'%}
+
+{% block content %}
+
+<h1>History</h1><hr>    
+<div>
+    <table class="table table-sm table-striped-columns table-hover">
+        <thead class="table-light">
+            <tr>
+                {% for col in cols %}
+                    <th scope="col">{{ col }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+                <tr>
+                    <th scope="row">{{ row.0 }}</th>
+                    <td>{{ row.1 }}</td>
+                    <td>{{ row.2 }}</td>
+                    <td>{{ row.3 }}</td>
+                    <td>{{ row.4 }}</td>
+                    <td>{{ row.5 }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="{% url 'dashboard:history_pages' 'p' %}">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="{% url 'dashboard:history_pages' '1' %}">1</a></li>
+            <li class="page-item"><a class="page-link" href="{% url 'dashboard:history_pages' '2' %}">2</a></li>
+            <li class="page-item"><a class="page-link" href="{% url 'dashboard:history_pages' '3' %}">3</a></li>
+            <li class="page-item"><a class="page-link" href="{% url 'dashboard:history_pages' '4' %}">4</a></li>
+            <li class="page-item"><a class="page-link" href="{% url 'dashboard:history_pages' '5' %}">5</a></li>
+            <li class="page-item"><a class="page-link" href="{% url 'dashboard:history_pages' 'n' %}">Next</a></li>
+        </ul>
+    </nav>
+</div>
+
+<h1 style="margin: 200px 0px 10px 0px;">Key values</h1>
+<hr>
+<div class="container">
+    <h4>Last: {{ keys.3 }}</h4>
+    <h4>Max: {{ keys.0 }}</h4>
+    <h4>Min: {{ keys.1 }}</h4>
+    <h4>Mean: {{ keys.2 }}</h4>
+</div>
+
+{% endblock %}

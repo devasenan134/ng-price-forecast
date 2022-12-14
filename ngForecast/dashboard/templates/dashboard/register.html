@@ -1,0 +1,17 @@
+{% extends "dashboard/base.html"%}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <br>
+    <input class="btn btn-sm btn-info" type="submit" value="Submit">
+</form>
+{% for message in messages %}
+{{ message }}
+{% endfor %}
+
+{% endblock %}

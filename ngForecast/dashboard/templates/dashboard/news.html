@@ -1,0 +1,13 @@
+{% extends 'dashboard/base.html'%}
+
+{% block content %}
+
+<h1 style="margin: 0px 0px 40px 0px">News<hr></h1>
+{% for news in news24 %}
+    <a href="{{ news.3 }}" target="_blank"><h4>{{ news.0 }}</h4></a>
+    <p>{{ news.1 }} {{ news.2 }}
+        <img srcset="{{ news.4 }}" alt="" width="50" height="60">
+    </p>
+{% endfor %}
+
+{% endblock %}

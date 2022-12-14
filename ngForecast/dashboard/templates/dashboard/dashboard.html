@@ -1,0 +1,21 @@
+{% extends "dashboard/base.html"%}
+
+{% block content %}
+
+<h1>Predictions</h1>
+<div class="container">
+    <img src='data:image/png;base64,{{ trend }}' class="img-fluid" alt="Responsive image">
+
+    <h4>Accuracy - {{ accuracy }}%</h4>
+</div>
+
+<h1 style="margin: 200px 0px 10px 0px;">Key values</h1>
+<hr>
+<div class="container">
+    <h4>Last: {{ keys.3 }}</h4>
+    <h4>Max: {{ keys.0 }}</h4>
+    <h4>Min: {{ keys.1 }}</h4>
+    <h4>Mean: {{ keys.2 }}</h4>
+</div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'dashboard/base.html'%}
+
+{% block content %}
+
+<h1>Trends</h1>
+<hr>
+<div class="container">
+    <h3>Line plot shows the trend or the frequency of the data(price) along another factor(year). We can infer how the
+        data
+        changes over the time period</h3>
+    <img src='data:image/png;base64,{{ lp }}' class="img-fluid" alt="Responsive image">
+    <h4>We can see that price of natural gas has been reduced on an average unlike the years from 2012 to 2022</h4>
+</div>
+
+
+<h1 style="margin: 200px 0px 10px 0px;"><a href="{% url 'dashboard:news' %}">News</a></h1>
+<hr>
+<div class="container">
+    {% for news in news24 %}
+
+    <a href="{{ news.3 }}" target="_blank">
+        <h4>{{ news.0 }}</h4>
+    </a>
+    <p>{{ news.1 }} {{ news.2 }}
+        <img srcset="{{ news.4 }}" alt="" width="50" height="60">
+    </p>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

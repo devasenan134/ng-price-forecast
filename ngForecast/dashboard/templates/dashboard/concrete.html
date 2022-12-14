@@ -1,0 +1,24 @@
+{% extends "dashboard/base.html"%}
+
+{% block content %}
+
+
+
+<h1 style="margin: 0px 0px 50px 0px">Data analysis {{ stat }} <hr></h1>
+
+<div class="container">
+    <h3>1.Bar plot represents an estimate of central tendency for a numeric variable with the height of each rectangle</h3>
+    <img src='data:image/png;base64,{{ dp }}' class="img-fluid" alt="Responsive image">
+    <h4>From this bar plot we can infer that the price of natural gas over the years has a tendency to be lower in the months of
+    Feb-Apr, Aug-Oct and to be higher in the months of Nov-Jan, May-July</h4>
+</div>
+<hr style="margin: 50px 0px">
+<div class="container">
+    <h3>2.Swam plot is another way of plotting the distribution of an attribute or the joint distribution of a couple of
+    attributes and is used for representing categorical values</h3>
+    <img src='data:image/png;base64,{{ sp }}' class="img-fluid" alt="Responsive image">
+    <h4>We can see that price has hit the hightest values in winter and autumn seasons which implies that the use of natural gas
+    is higher in winter and autumn.</h4>
+</div>
+
+{% endblock %}
